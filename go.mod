@@ -1,4 +1,4 @@
-module gitlab.com/dj80hd/observ
+module github.com/dj80hd/observ
 
 require (
 	github.com/matryer/is v1.2.0

@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/dj80hd/observ/pkg/app"
 	"github.com/namsral/flag"
-	"gitlab.com/dj80hd/observ/pkg/app"
 )
 
 var addr string
