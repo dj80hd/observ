@@ -87,9 +87,9 @@ while true; do curl -si localhost:8111/req?worksecs=11; sleep 1; done
 
 ## Testing
 
-Use `localhost:8111/metrics` or use the graph links below:
+Use `localhost:8111/metrics` or the links below to verify prometheus metrics:
 
-* [Requests] go up the more time the `/req` endpoint is hit
+* [Request] rates go up the more often `/req` endpoint is hit
 * [Errors] go up the more the `httpcode` param is set to 5xx
 * [Duration] goes up when `duration` is set higher
 
