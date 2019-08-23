@@ -102,7 +102,7 @@ Use `localhost:8111/metrics` or the links below to verify prometheus metrics:
 * Serverless version to simulate job metrics
 * Grafana
 
-[Requests]: http://localhost:9090/graph?g0.range_input=2h&g0.expr=rate(http_requests_total%7Bjob%3D%22observ%22%7D%5B5m%5D)&g0.tab=0'
+[Request]: http://localhost:9090/graph?g0.range_input=2h&g0.expr=rate(http_requests_total%7Bjob%3D%22observ%22%7D%5B5m%5D)&g0.tab=0'
 [Errors]: http://localhost:9090/graph?g0.range_input=30m&g0.expr=http_requests_total%7Bjob%3D%22observ%22%2C%20code%3D~%225..%22%7D&g0.tab=0
 [Duration]: http://localhost:9090/graph?g0.range_input=2h&g0.expr=http_request_duration_microseconds_sum%7Bjob%3D%22observ%22%7D%20%2F%20http_request_duration_microseconds_count%7Bjob%3D%22observ%22%7D&g0.tab=0
 [Utilization]: http://localhost:9090/graph?g0.range_input=1h&g0.expr=observ_worker_utilization&g0.tab=0
