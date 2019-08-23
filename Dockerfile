@@ -1,4 +1,3 @@
-#RUN apk add bash ca-certificates git gcc g++ libc-dev make
 FROM golang:1.11-alpine AS build
 RUN apk add git
 
