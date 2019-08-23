@@ -1,20 +1,12 @@
-# build stage
+#RUN apk add bash ca-certificates git gcc g++ libc-dev make
 FROM golang:1.11-alpine AS build
-RUN apk add bash ca-certificates git gcc g++ libc-dev make
+RUN apk add git
 
-RUN go get -u golang.org/x/lint/golint
-
-# golang base image has GOPATH=/go
 ADD . /go/src/github.com/dj80hd/observ
 WORKDIR /go/src/github.com/dj80hd/observ
+RUN CGO_ENABLED=0 GO111MODULE=on go build -o build/observ ./cmd/observ
 
-COPY go.mod .
-COPY go.sum .
 
-RUN GO111MODULE=on make test
-
-FROM alpine:latest
-
+FROM scratch
 COPY --from=build /go/src/github.com/dj80hd/observ/build/observ /observ
-
 ENTRYPOINT ["/observ"]
