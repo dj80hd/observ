@@ -6,7 +6,7 @@ build: lint
 
 lint:
 	go fmt ./...
-	golint -set_exit_status $$(go list ./... | grep -v /vendor/)
+	golangci-lint run
 
 test: build
 	go test -timeout 1s ./...

@@ -136,6 +136,7 @@ func (a *App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	case strings.Contains(r.URL.Path, "/req"):
 		// InstrumentHandler provides RED metrics automatically
+		// nolint:staticcheck
 		prometheus.InstrumentHandler(
 			"/req",
 			http.HandlerFunc(a.handleReq))(w, r)
